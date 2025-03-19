@@ -4,6 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Project</title>
+    <style>
+        .yt-btn{
+            border: none;
+            background-color: black;
+            color: white;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+            padding-right: 15px;   
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom: 30px;
+        
+        }
+
+        .issub {
+            background-color: rgb(240,240,240);
+            color: black;
+        }
+
+        body {
+            font-family: Arial;
+        }
+
+        .calc {
+           color: white;
+           background-color: green; 
+           border-radius: 2px;
+           border: none;
+           font-weight: bold;
+           padding-top: 10px;
+           padding-bottom: 10px;
+           font-size: 15px;
+           cursor: pointer;
+        }
+
+        .Calculator {
+            font-size: 15px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 10px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+      </style>
 </head>
 <body>
     <h1>YOUTUBE SUBSCRIBE BUTTON</h1>
@@ -14,15 +59,17 @@
     <h1>AMAZON SHIPPING CALCULATOR</h1>
     <p>Orders under $40 = +$10 shipping.</p>
     <p>Orders over $40 = FREE Shipping.</p>
-    <input type="text" name="Calculator" class="Calculator" onkeydown="keydownn(event)">
+    <input type="text" name="Calculator" class="Calculator" placeholder = "Enter your amount" onkeydown="keydownn(event)">
     <button class="calc" onclick="calc()">Calculate</button>
     <p class="calout"></p>
     <script>
         function Subscribe () {
             if (document.querySelector('.yt-btn').innerText==='Subscribe') {
                 document.querySelector('.yt-btn').innerText= 'Subscribed';
+                document.querySelector('.yt-btn').classList.add('issub');
             } else {
                 document.querySelector('.yt-btn').innerText = 'Subscribe';
+                document.querySelector('.yt-btn').classList.remove('issub');
             }
         }
 
