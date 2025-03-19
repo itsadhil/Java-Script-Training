@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>HELLO</button>
+    <button class="js-bot">BOT BUTTON</button>
+    <button class="js-bott">THIRD BUTTON</button>
+    <script>
+        console.log(document.title);
+        document.title = 'DOM LEARNING';
+        console.log(document.body);
+        console.log(typeof document.body);
+        console.log(document.body.innerHTML);
+        //document.body.innerHTML = 'HELLO';
+        //document.body.innerHTML = '<button>DOMS</button>'
+        console.log(document.querySelector('button'));
+        document.querySelector('button').innerHTML = 'DOMS HEHE';
+        document.querySelector('.js-bot').innerHTML = 'BOT YES BOT';
+        const buttonElem = document.querySelector('.js-bott');
+        console.log(buttonElem);
+    </script>
+</body>
+</html>
