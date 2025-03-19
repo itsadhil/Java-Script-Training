@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project</title>
+</head>
+<body>
+    <h1>YOUTUBE SUBSCRIBE BUTTON</h1>
+    <button class = "yt-btn" onclick="Subscribe()">Subscribe</button>
+    <script>
+        function Subscribe () {
+            if (document.querySelector('.yt-btn').innerText==='Subscribe') {
+                document.querySelector('.yt-btn').innerText= 'Subscribed';
+            } else {
+                document.querySelector('.yt-btn').innerText = 'Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>
