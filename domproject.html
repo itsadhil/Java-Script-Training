@@ -8,12 +8,39 @@
 <body>
     <h1>YOUTUBE SUBSCRIBE BUTTON</h1>
     <button class = "yt-btn" onclick="Subscribe()">Subscribe</button>
+    <h1>ROCK PAPER SCISSORS GAME</h1>
+    <a href="rockpprsci.html">Click me to go there</a>
+
+    <h1>AMAZON SHIPPING CALCULATOR</h1>
+    <p>Orders under $40 = +$10 shipping.</p>
+    <p>Orders over $40 = FREE Shipping.</p>
+    <input type="text" name="Calculator" class="Calculator" onkeydown="keydownn(event)">
+    <button class="calc" onclick="calc()">Calculate</button>
+    <p class="calout"></p>
     <script>
         function Subscribe () {
             if (document.querySelector('.yt-btn').innerText==='Subscribe') {
                 document.querySelector('.yt-btn').innerText= 'Subscribed';
             } else {
                 document.querySelector('.yt-btn').innerText = 'Subscribe';
+            }
+        }
+
+        function calc () {
+            const amt = document.querySelector('.Calculator');
+            let calout = Number(amt.value);
+            if (amt.value > 0 && amt.value <41) {
+                calout = calout + 10;
+                document.querySelector('.calout').innerHTML = `$${calout}`;  
+            } else {
+                calout = calout;
+                document.querySelector('.calout').innerHTML = `$${calout}`;  
+            }   
+        }
+
+        function keydownn (event) {
+            if (event.key === 'Enter') {
+                calc()
             }
         }
     </script>
