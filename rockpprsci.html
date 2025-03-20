@@ -4,19 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .tite-block{
+            font-size: 50px;
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .rockimg{
+            height: 100px;
+            
+        }
+
+        .paperimg{
+            height: 100px;
+        }
+
+        .scissorbtn{
+            height: 100px;
+        }
+
+        .btnbtn{
+            background-color: transparent;
+            border-radius: 900px;
+            border-color: white;
+            margin-left: 300px;
+            width: 120px;
+            height: 120px;
+        }
+
+        .resetbtn{
+            background-color: white;
+            color: black;
+            font-size: 16px;
+            border-color: white;
+            border-radius:900px ;
+        }
+        .resetbtn:hover{
+            background-color: red;
+            color: white;
+            font-weight: bold;
+
+        }
+
+
+    </style>
 </head>
 <body>
-    <h1>Rock paper scissors</h1>
-    <button onclick="playgame('Rock'); scoreupdator();">Rock</button>
-    <button onclick="playgame('Paper'); scoreupdator();">Paper</button>
-    <button onclick="playgame('Scissors'); scoreupdator();">Scissors</button>
+    <h1 class="tite-block">Rock paper scissors</h1>
+    <button class = "rockbtn btnbtn"onclick="playgame('Rock'); scoreupdator();"><img src="stone.png" alt="Rock" class="rockimg"></button>
+    <button onclick="playgame('Paper'); scoreupdator();"class = "btnbtn"><img src="paper.png" alt="paper" class="paperimg"></button>
+    <button onclick="playgame('Scissors'); scoreupdator();"class = "btnbtn"><img src="Scissors.png" alt="scissors" class="scissorbtn"></button>
     <p class="result"></p>
     <p class="move"></p>
     <h1>SCORE</h1>
     <p class="wins">WINS: 0</p>
     <p class="loss">LOSS: 0</p>
     <p class="ties">TIES: 0</p>
-    <button onclick="score.wins = 0;score.loss = 0; score.ties = 0; scoreupdator(); localStorage.removeItem('score');alert('Score has been reset')">Reset Score</button>
+    <button class = "resetbtn" onclick="score.wins = 0;score.loss = 0; score.ties = 0; scoreupdator(); localStorage.removeItem('score');alert('Score has been reset')">Reset Score</button>
 <script>
     let score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
