@@ -54,21 +54,27 @@
 
         }
 
+        .result{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 60px;
+            text-align: center;
+            font-weight: bold;
+        }
 
     </style>
 </head>
 <body>
     <h1 class="tite-block">Rock paper scissors</h1>
-    <button class = "rockbtn btnbtn"onclick="playgame('Rock'); scoreupdator();"><img src="stone.png" alt="Rock" class="rockimg"></button>
-    <button onclick="playgame('Paper'); scoreupdator();"class = "btnbtn"><img src="paper.png" alt="paper" class="paperimg"></button>
+    <button class = "rockbtn btnbtn"onclick="playgame('Rock'); scoreupdator();"><img src="Rock.png" alt="Rock" class="rockimg"></button>
+    <button onclick="playgame('Paper'); scoreupdator();"class = "btnbtn"><img src="Paper.png" alt="paper" class="paperimg"></button>
     <button onclick="playgame('Scissors'); scoreupdator();"class = "btnbtn"><img src="Scissors.png" alt="scissors" class="scissorbtn"></button>
     <p class="result"></p>
-    <p class="move"></p>
+    <p class="move">You <img src="stone.png" alt="Rock" class="rockimg"> <img src="stone.png" alt="Rock" class="rockimg"> Computer</p>
     <h1>SCORE</h1>
     <p class="wins">WINS: 0</p>
     <p class="loss">LOSS: 0</p>
     <p class="ties">TIES: 0</p>
-    <button class = "resetbtn" onclick="score.wins = 0;score.loss = 0; score.ties = 0; scoreupdator(); localStorage.removeItem('score');alert('Score has been reset')">Reset Score</button>
+    <button class = "resetbtn" onclick="score.wins = 0;score.loss = 0; score.ties = 0; scoreupdator(); localStorage.removeItem('score');">Reset Score</button>
 <script>
     let score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
@@ -117,19 +123,24 @@
             if (result === 'You Win'){
                 score.wins += 1;
                 document.querySelector('.result').innerHTML = result;
-                document.querySelector('.move').innerHTML = `You picked ${playermove} and The computer picked ${computermove}`
+                document.querySelector('.move').innerHTML = `
+                You <img src="${playermove}.png" alt="${playermove}" class="rockimg"> <img src="${computermove}.png" alt="${computermove}" class="rockimg"> Computer
+                `
                 
             } else if (result === 'You Lost'){
                 score.loss += 1;
                 document.querySelector('.result').innerHTML = result;
-                document.querySelector('.move').innerHTML = `You picked ${playermove} and The computer picked ${computermove}`
+                document.querySelector('.move').innerHTML = `
+                You <img src="${playermove}.png" alt="${playermove}" class="rockimg"> <img src="${computermove}.png" alt="${computermove}" class="rockimg"> Computer
+                `
             } else{
                 score.ties +=1;
                 document.querySelector('.result').innerHTML = result;
-                document.querySelector('.move').innerHTML = `You picked ${playermove} and The computer picked ${computermove}`
+                document.querySelector('.move').innerHTML = `
+                You <img src="${playermove}.png" alt="${playermove}" class="rockimg"> <img src="${computermove}.png" alt="${computermove}" class="rockimg"> Computer
+                `
             }
             localStorage.setItem('score', JSON.stringify(score));
-            alert(`You picked ${playermove} and The computer picked ${computermove}\nScore: Wins: ${score.wins}, Loss: ${score.loss}, Ties: ${score.ties}`);
         }
     
     function scoreupdator() {
