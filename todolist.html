@@ -46,6 +46,22 @@
             margin: 20px;
             font-family: 'Courier New', Courier, monospace;
         }
+
+        .fbtn{
+            background-color: red;
+            border-color: black;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            margin-left: 50px;
+        }
+
+        .fp{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+            
+        }
     </style>
 </head>
 <body>
@@ -87,7 +103,7 @@
             datearray.push(datev.value);
             let htmll = ` `;
             for (let index = 0; index < todolist3.length; index++){
-                let html = `<p>${todolist3[index]} ${datearray[index]} <button class = 'fbtn'> Delete </button></p>'`;
+                let html = `<p class = 'fp'>${todolist3[index]} ${datearray[index]} <button class = 'fbtn'> Delete </button></p>`;
                 htmll += html;
             } 
             document.querySelector('.last-section').innerHTML = `${htmll}`;
