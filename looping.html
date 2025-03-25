@@ -24,6 +24,33 @@
         }
         
         console.log(randomnum)
+        const todol = [
+            'Watch Youtube',
+            'Do some coding',
+            'Clean Dishes'
+        ];
+
+        for (let index = 0; index < todol.length; index++) {
+            const value = todol[index];
+            console.log(value);
+        }
+
+        const nums = [1,1,2];
+        let dnums = [];
+        accumulator = 0
+        for (let index = 0; index < nums.length; index++) {
+            value = nums[index];
+            accumulator += value;
+        }
+
+        for (let index = 0; index < nums.length; index++){
+            value = nums[index];
+            temp = value*2;
+            dnums.push(temp)
+        }
+        console.log(dnums);
+
+
     </script>
 </body>
 </html>
