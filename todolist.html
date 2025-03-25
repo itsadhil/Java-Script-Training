@@ -11,7 +11,7 @@
         }
 
         .todo2{
-            margin-bottom: 50px;
+            margin-bottom: 10px;
             padding: 10px;
         }
 
@@ -29,7 +29,7 @@
             padding: 10px;
         }
 
-        #date{
+        .date{
             margin-left: 2px;
             padding: 10px;
         }
@@ -41,24 +41,58 @@
             font-weight: bold;
             margin-left: 2px;
         }
+
+        .looped {
+            margin: 20px;
+            font-family: 'Courier New', Courier, monospace;
+        }
     </style>
 </head>
 <body>
     <p>Todo List Practice 1</p>
     <input class = 'todo1' type="text"><button class="add12" onclick="addtodo()">Add</button>
     <p>Todo List Practice 2</p>
-    <input class = 'todo2' type="text"><button class="add12">Add</button>
+    <input class = 'todo2' type="text"><button class="add12" onclick="showarray()">Add</button>
+    <div class="looped"></div>
     <p>Todo List</p>
-    <input placeholder="Enter the task" type="text" class="todoinp"><input type="date" name="date" id="date"><button class="todoadd">Add</button>
+    <input placeholder="Enter the task" type="text" class="todoinp"><input type="date" name="date" class="date"><button class="todoadd" onclick="finalbtn()">Add</button>
+    <div class="last-section"></div>
     <script>
         const todolist1 = [];
+        const todolist2 = [];
+        const todolist3 = [];
+        const datearray = [];
         function addtodo() {
         const todo1 = document.querySelector('.todo1');
         todolist1.push(todo1.value)
         console.log(todolist1)
         }
-        
 
+        function showarray() {
+            const todo2 = document.querySelector('.todo2');
+            todolist2.push(todo2.value);
+            let htmll = ` `;
+            for (let index = 0; index < todolist2.length; index++) {
+                let value = todolist2[index];
+                let html = `<p>${value}</p>`;
+                htmll += html; 
+            }
+            document.querySelector('.looped').innerHTML = `${htmll}`;
+        }
+
+        function finalbtn () {
+            const todo3 = document.querySelector('.todoinp');
+            const datev = document.querySelector('.date');
+            todolist3.push(todo3.value);
+            datearray.push(datev.value);
+            let htmll = ` `;
+            for (let index = 0; index < todolist3.length; index++){
+                let html = `<p>${todolist3[index]}</p><p>${datearray[index]}</p><button class = 'fbtn> Delete </button>'`;
+                htmll += html;
+            } 
+            document.querySelector('.last-section').innerHTML = `${htmll}`;
+
+        }
     </script>
 </body>
 </html>
