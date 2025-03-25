@@ -87,7 +87,7 @@
             datearray.push(datev.value);
             let htmll = ` `;
             for (let index = 0; index < todolist3.length; index++){
-                let html = `<p>${todolist3[index]}</p><p>${datearray[index]}</p><button class = 'fbtn> Delete </button>'`;
+                let html = `<p>${todolist3[index]} ${datearray[index]} <button class = 'fbtn'> Delete </button></p>'`;
                 htmll += html;
             } 
             document.querySelector('.last-section').innerHTML = `${htmll}`;
