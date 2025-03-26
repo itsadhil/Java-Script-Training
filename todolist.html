@@ -76,8 +76,8 @@
     <script>
         const todolist1 = [];
         const todolist2 = [];
-        const todolist3 = [];
-        const datearray = [];
+        let todolist3 = [];
+        let datearray = [];
         function addtodo() {
         const todo1 = document.querySelector('.todo1');
         todolist1.push(todo1.value)
@@ -102,12 +102,17 @@
             todolist3.push(todo3.value);
             datearray.push(datev.value);
             let htmll = ` `;
-            for (let index = 0; index < todolist3.length; index++){
-                let html = `<p class = 'fp'>${todolist3[index]} ${datearray[index]} <button class = 'fbtn'> Delete </button></p>`;
+            for (let i = 0; i < todolist3.length; i++){
+                let html = `<p class = 'fp'>
+                    ${todolist3[i]} ${datearray[i]}
+                    <button class = 'fbtn' onclick = "
+                    todolist3.splice(${i}, 1);
+                    datearray.splice(${i}, 1);
+                    finalbtn()"> Delete </button></p>`;
                 htmll += html;
-            } 
-            document.querySelector('.last-section').innerHTML = `${htmll}`;
-
+            }
+            console.log(htmll);
+            document.querySelector('.last-section').innerHTML = `${htmll}`
         }
     </script>
 </body>
